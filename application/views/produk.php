@@ -30,15 +30,16 @@
 				<span>Dashboard</span>
 			</div>
 			<div class="sidebar-list bg-soft-blue">
-				<a class="nav-link" aria-current="page" href="<?php echo site_url('produk')?>">Produk</a>
+				<a class="nav-link" aria-current="page" href="<?php echo site_url('produk')?>">Product</a>
 			</div>
 			<div class="sidebar-list">
-				<a class="nav-link" aria-current="page" href="<?php echo site_url('pembelian')?>">Pembelian</a>
+				<a class="nav-link" aria-current="page" href="<?php echo site_url('pembelian')?>">Order</a>
 			</div>
 		</div>
 	</div>
 
 	<div class="w-100 content p-4">
+		<h1 class="mb-4">Product</h1>
 		<form action="<?= site_url('produk/simpan') ?>" method="post">
 			<?php if (isset($produk)) { ?>
 				<input type="hidden" name="id" value="<?= $produk['id'] ?>">
@@ -54,7 +55,7 @@
 						<small class="text-danger"><?= form_error('price') ?></small>
 					</div>
 					<div class="d-flex align-items-end">
-						<input type="submit" name="update" value="Simpan" class="btn btn-primary btn-sm">
+						<input type="submit" name="update" value="Update" class="btn btn-primary btn-sm">
 					</div>
 				</div>
 
@@ -71,7 +72,7 @@
 						<small class="text-danger"><?= form_error('price') ?></small>
 					</div>
 					<div class="d-flex align-items-end">
-						<input type="submit" name="simpan" value="Simpan" class="btn btn-primary btn-sm">
+						<input type="submit" name="simpan" value="Create" class="btn btn-primary btn-sm">
 					</div>
 				</div>
 			<?php } ?>
@@ -92,10 +93,10 @@
 					<p class="w-100 pt-2"><?php echo $prd['namaproduk'] ?></p>
 					<p class="w-100 pt-2">Rp. <?php echo $prd['price'] ?></p>
 					<div class="w-100">
-						<a href="produk/edit/<?php echo $prd['id']?>" class="text-primary">
+						<a href="produk/edit/<?php echo $prd['id']?>" class="text-primary hover-btn">
 							<i class="fa-solid fa-pen-to-square"></i>
 						</a>
-						<a href="produk/hapus/<?php echo $prd['id']?>" class="text-danger ms-4">
+						<a href="produk/hapus/<?php echo $prd['id']?>" class="text-danger hover-btn ms-4">
 							<i class="fa-solid fa-trash"></i>
 						</a>
 					</div>

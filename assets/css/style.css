@@ -30,3 +30,7 @@ a{
 .bg-soft-blue{
     background-color: #4699f2;
 }
+.hover-btn:hover{
+    transition: all .1s ease-in;
+    font-size: 20px;
+}
