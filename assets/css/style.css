@@ -1,0 +1,32 @@
+a{
+    text-decoration: none;
+}
+.table-list{
+    background-color: white;
+    margin: 8px 0px;
+    border-radius: 8px;
+    padding: 0px 10px;
+}
+.h-100vh{
+    height: 100vh;
+}
+.sidebar{
+    background-color: #86c9ed !important;
+    width: 300px;
+}
+.content{
+    height: 100vh;
+    overflow-y: scroll;
+}
+.sidebar-list{
+    margin-top: 5px ;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all .2s ease;
+}
+.sidebar-list:hover{
+    background-color: #4699f2;
+}
+.bg-soft-blue{
+    background-color: #4699f2;
+}
