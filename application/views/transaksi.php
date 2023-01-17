@@ -33,6 +33,12 @@
 				<a class="nav-link" aria-current="page" href="<?php echo site_url('pembelian')?>">Order</a>
 			</div>
 		</div>
+        <div class="h-50 mt-5 d-flex align-items-end justify-content-center">
+			<a href="<?php echo site_url('produk/logout')?>" class="text-dark fw-bold">
+				<i class="fa-solid fa-right-from-bracket"></i>
+				Log Out
+			</a>
+		</div>
 	</div>
 
     <div class="w-100 content p-4">

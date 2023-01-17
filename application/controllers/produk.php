@@ -30,13 +30,13 @@ class Produk extends CI_Controller {
 		$user= $this->user_model->select($key);
 		if (count($user)>0) {
 			$this->session->set_userdata('username', $this->input->post('username'));
-			$this->index();
+			redirect('produk');
 		}
 	}
 
 	function logout() {
 		$this->session->unset_userdata('username', $this->input->post('username'));
-		$this->index();
+		redirect('produk');
 	}
 
 	function edit($id){

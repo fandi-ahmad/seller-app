@@ -11,8 +11,6 @@
 </head>
 <body style="background-color: var(--bs-gray-300);">
 
-
-
 <div class="container-fluid p-0 h-100vh d-flex flex-row">
 
 	<div class="sidebar">
@@ -35,6 +33,12 @@
 			<div class="sidebar-list">
 				<a class="nav-link" aria-current="page" href="<?php echo site_url('pembelian')?>">Order</a>
 			</div>
+		</div>
+		<div class="h-50 mt-5 d-flex align-items-end justify-content-center">
+			<a href="<?php echo site_url('produk/logout')?>" class="text-dark fw-bold">
+				<i class="fa-solid fa-right-from-bracket"></i>
+				Log Out
+			</a>
 		</div>
 	</div>
 
