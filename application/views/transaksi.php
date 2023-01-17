@@ -80,20 +80,33 @@
 			</div>
             <?php 
             $index = 1;
+            $total = 0;
             foreach ($detils as $det) { ?>
                 <div class="d-flex align-items-center table-list">
                     <p class="w-25 pt-2"><?= $index ?>.</p>
                     <p class="w-100 pt-2"><?= $det['namaproduk'] ?></p>
-                    <p class="w-100 pt-2"><?= $det['price'] ?></p>
+                    <p class="w-100 pt-2">Rp. <?= $det['price'] ?></p>
                     <p class="w-100 pt-2"><?= $det['jumlah'] ?></p>
-                    <p class="w-100 pt-2"><?= $det['price'] * $det['jumlah'] ?></p>
+                    <p class="w-100 pt-2">Rp. <?= $det['price'] * $det['jumlah'] ?></p>
                     <div class="w-100">
                         <a href="<?= site_url('pembelian/hapus/' . $det['iddetailpembelian']) ?>" class="text-danger hover-btn">
 							<i class="fa-solid fa-trash"></i>
                         </a>
                     </div>
                 </div>
-            <?php $index++; } ?>
+            <?php 
+                $total += $det['price'] * $det['jumlah']; 
+                $index++; 
+                } 
+            ?>
+            <div class="d-flex align-items-center table-list mt-4">
+                <p class="w-25 pt-2"></p>
+                <p class="w-100 pt-2"></p>
+                <p class="w-100 pt-2"></p>
+                <p class="w-100 pt-2">Total Pay :</p>
+                <p class="w-100 pt-2"><b>Rp. <?php echo $total; ?></b></p>
+                <div class="w-100"></div>
+            </div>
 		</div>
 
     </div>
