@@ -8,6 +8,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <body style="background-color: var(--bs-gray-300);">
 
@@ -25,7 +26,7 @@
 		<div class="px-3 mt-5">
 			<p>Menu:</p>
 			<div class="sidebar-list">
-				<span>Dashboard</span>
+				<a class="nav-link" aria-current="page" href="<?php echo site_url('dashboard')?>">Dashboard</a>
 			</div>
 			<div class="sidebar-list bg-soft-blue">
 				<a class="nav-link" aria-current="page" href="<?php echo site_url('produk')?>">Product</a>
@@ -50,12 +51,12 @@
 				<div class="w-100 d-flex justify-content-between gap-4">
 					<div class="form-group w-100">
 						<label for="namaproduk">Product Name</label>
-						<input type="text" name="namaproduk" value="<?= $produk['namaproduk'] ?>" placeholder="type here ..." class="form-control">
+						<input type="text" name="namaproduk" value="<?= $produk['namaproduk'] ?>" placeholder="type here ..." class="form-control" required>
 						<small class="text-danger"><?= form_error('namaproduk') ?></small>
 					</div>
 					<div class="form-group w-100">
 						<label for="price">Price</label>
-						<input type="text" name="price" value="<?= $produk['price'] ?>" placeholder="type here ..." class="form-control">
+						<input type="text" name="price" value="<?= $produk['price'] ?>" placeholder="type here ..." class="form-control" required>
 						<small class="text-danger"><?= form_error('price') ?></small>
 					</div>
 					<div class="d-flex align-items-end">
@@ -67,12 +68,12 @@
 				<div class="w-100 d-flex justify-content-between gap-4">
 					<div class="form-group w-100">
 						<label for="namaproduk">Product Name</label>
-						<input type="text" name="namaproduk" placeholder="type here ..." class="form-control">
+						<input type="text" name="namaproduk" placeholder="type here ..." class="form-control" required>
 						<small class="text-danger"><?= form_error('namaproduk') ?></small>
 					</div>
 					<div class="form-group w-100">
 						<label for="price">Price</label>
-						<input type="text" name="price" placeholder="type here ..." class="form-control">
+						<input type="text" name="price" placeholder="type here ..." class="form-control" required>
 						<small class="text-danger"><?= form_error('price') ?></small>
 					</div>
 					<div class="d-flex align-items-end">

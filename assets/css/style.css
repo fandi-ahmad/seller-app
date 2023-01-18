@@ -34,3 +34,25 @@ a{
     transition: all .1s ease-in;
     font-size: 20px;
 }
+.card-block{
+    border-radius: 5px;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.my-round{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-green{
+    color: #1fc42a;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+}

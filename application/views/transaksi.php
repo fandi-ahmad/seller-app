@@ -24,7 +24,7 @@
 		<div class="px-3 mt-5">
 			<p>Menu:</p>
 			<div class="sidebar-list">
-				<span>Dashboard</span>
+				<a class="nav-link" aria-current="page" href="<?php echo site_url('dashboard')?>">Dashboard</a>
 			</div>
 			<div class="sidebar-list">
 				<a class="nav-link" aria-current="page" href="<?php echo site_url('produk')?>">Product</a>
@@ -49,7 +49,7 @@
                 <div class="w-100 d-flex justify-content-between gap-4">
                     <div class="form-group w-100">
                         <label for="idproduk">Product Name</label>
-                        <select name="idproduk" class="form-select">
+                        <select name="idproduk" class="form-select" required>
                             <option value="">- select product -</option>
                             <?php foreach ($produks as $produk) { ?>
                                 <option value="<?php echo $prd[$produk['id']] = $produk['id'] ?>"><?php echo $prd[$produk['id']] = $produk['namaproduk'] ?></option>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group w-100">
                         <label for="jumlah">Count</label>
-                        <input type="number" name="jumlah" placeholder="0" class="form-control">
+                        <input type="number" name="jumlah" placeholder="0" class="form-control" required>
                         <small class="text-danger"><?= form_error('jumlah') ?></small>
                     </div>
                     <div class="d-flex align-items-end">

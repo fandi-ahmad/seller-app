@@ -8,20 +8,24 @@ class Pembelian extends CI_Controller {
 	}
 
 	function index(){
-		$key['status'] = 'y';
-        $pembelian = $this -> pembelian_model -> select($key);
-        if(count($pembelian) == 0) {
-            unset($pembelian);
-            $pembelian['tanggal'] = date('Y-m-d');
-            $pembelian['status'] = 'y';
-            $this -> pembelian_model -> insert ($pembelian);
+        if ($this->session->has_userdata('username')) {
+            $key['status'] = 'y';
+            $pembelian = $this -> pembelian_model -> select($key);
+            if(count($pembelian) == 0) {
+                unset($pembelian);
+                $pembelian['tanggal'] = date('Y-m-d');
+                $pembelian['status'] = 'y';
+                $this -> pembelian_model -> insert ($pembelian);
+            }
+            $pembelian = $this -> pembelian_model -> select($key)[0];
+            $key_detil['idpembelian'] = $pembelian ['idpembelian'];
+            $data['detils'] = $this -> pembelian_model -> select_detil($key_detil);
+            $data['produks'] = $this -> produk_model -> select();
+            $data['pembelian'] = $pembelian;
+            $this -> load -> view('transaksi', $data);
+        } else {
+            $this->load->view('login');
         }
-        $pembelian = $this -> pembelian_model -> select($key)[0];
-        $key_detil['idpembelian'] = $pembelian ['idpembelian'];
-        $data['detils'] = $this -> pembelian_model -> select_detil($key_detil);
-        $data['produks'] = $this -> produk_model -> select();
-        $data['pembelian'] = $pembelian;
-        $this -> load -> view('transaksi', $data);
 	}
 
 	function simpan(){

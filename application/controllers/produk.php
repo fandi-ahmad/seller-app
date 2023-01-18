@@ -4,6 +4,7 @@ class Produk extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('produk_model');
+		$this->load->model('user_model');
 	}
 
 	function index(){
@@ -16,7 +17,10 @@ class Produk extends CI_Controller {
 							anchor('produk/hapus/'.$prd['id'],'HAPUS','class="btn btn-sm btn-danger ms-2"');
 				$data['produks'][]=$prd;
 			}
-			$this->load->view('produk',$data);
+			$data['username'] = $this->session->userdata('username');
+			$username = $this->session->userdata('username');
+			$data['user'] = $this->user_model->select(['username' => $username]);
+			$this->load->view('produk', $data);
 		} else {
 			$this->load->view('login');
 		}
@@ -30,7 +34,7 @@ class Produk extends CI_Controller {
 		$user= $this->user_model->select($key);
 		if (count($user)>0) {
 			$this->session->set_userdata('username', $this->input->post('username'));
-			redirect('produk');
+			redirect('dashboard');
 		}
 	}
 
