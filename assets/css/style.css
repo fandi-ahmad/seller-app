@@ -55,4 +55,22 @@ a{
 }
 *{
     font-family: 'Poppins', sans-serif;
+    /* color: white !important; */
+}
+.icon i{
+    min-width: 25px !important;
+}
+.btn-hover:hover{
+    transition: all .2s ease;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.logout{
+    padding: 5px 10px;
+    transition: all .2s ease;
+    border-radius: 5px;
+    color: black;
+}
+.logout:hover{
+    background-color: #00000020;
 }

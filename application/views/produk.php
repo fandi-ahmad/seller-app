@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Produk</title>
+	<title>Product</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/style.css') ?>">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="icon" href="<?php echo base_url('assets/img/shop.png') ?>">
 </head>
 <body style="background-color: var(--bs-gray-300);">
 
@@ -26,17 +26,26 @@
 		<div class="px-3 mt-5">
 			<p>Menu:</p>
 			<div class="sidebar-list">
-				<a class="nav-link" aria-current="page" href="<?php echo site_url('dashboard')?>">Dashboard</a>
+				<a class="nav-link" aria-current="page" href="<?php echo site_url('dashboard')?>">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span>Dashboard</span>
+                </a>
 			</div>
 			<div class="sidebar-list bg-soft-blue">
-				<a class="nav-link" aria-current="page" href="<?php echo site_url('produk')?>">Product</a>
+				<a class="nav-link" aria-current="page" href="<?php echo site_url('produk')?>">
+                    <span class="icon"><i class="fa-solid fa-box-open"></i></span>
+                    <span>Product</span>
+                </a>
 			</div>
 			<div class="sidebar-list">
-				<a class="nav-link" aria-current="page" href="<?php echo site_url('pembelian')?>">Order</a>
+				<a class="nav-link" aria-current="page" href="<?php echo site_url('pembelian')?>">
+                    <span class="icon"><i class="fa-solid fa-cart-shopping"></i></span> 
+                    <span>Order</span>   
+                </a>
 			</div>
 		</div>
 		<div class="h-50 mt-5 d-flex align-items-end justify-content-center">
-			<a href="<?php echo site_url('produk/logout')?>" class="text-dark fw-bold">
+			<a href="<?php echo site_url('produk/logout')?>" class="fw-bold logout">
 				<i class="fa-solid fa-right-from-bracket"></i>
 				Log Out
 			</a>
@@ -60,7 +69,7 @@
 						<small class="text-danger"><?= form_error('price') ?></small>
 					</div>
 					<div class="d-flex align-items-end">
-						<input type="submit" name="update" value="Update" class="btn btn-primary btn-sm">
+						<input type="submit" name="update" value="Update" class="btn btn-primary btn-sm btn-hover">
 					</div>
 				</div>
 
@@ -77,7 +86,7 @@
 						<small class="text-danger"><?= form_error('price') ?></small>
 					</div>
 					<div class="d-flex align-items-end">
-						<input type="submit" name="simpan" value="Create" class="btn btn-primary btn-sm">
+						<input type="submit" name="simpan" value="Create" class="btn btn-primary btn-sm btn-hover">
 					</div>
 				</div>
 			<?php } ?>
@@ -108,6 +117,10 @@
 				</div>
 			<?php $index++; } ?>
 		</div>
+
+		<div class="pt-2 text-center">
+            <small>Follow me on <a href="https://github.com/fandi-ahmad" target="_blank"><i class="fa-brands fa-square-github"></i> Github</a></s>
+        </div>
 	</div>
 
 </div>
